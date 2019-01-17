@@ -20,10 +20,3 @@ action "Helloworld-issue" {
   args = "args = \"\\\"Hello world, I'm $MY_NAME!\\\"\""
 }
 
-action "Hello World2" {
-  uses = "./say_hello.sh"
-  env = {
-    MY_NAME = "akiyoshi-yusuke"
-  }
-  args = "\"Hello world, I'm $MY_NAME!\""
-}
