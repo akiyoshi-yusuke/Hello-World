@@ -6,7 +6,7 @@ workflow "New workflow" {
   ]
 }
 
-action "Hello World" {
+action "Hello World1" {
   uses = "./action"
   env = {
     MY_NAME = "akiyoshi-yusuke"
@@ -20,7 +20,10 @@ action "Helloworld-issue" {
   args = "args = \"\\\"Hello world, I'm $MY_NAME!\\\"\""
 }
 
-action "Hello World-1" {
-  uses = "./action"
-  needs = ["Helloworld-issue"]
+action "Hello World2" {
+  uses = "./say_hello.sh"
+  env = {
+    MY_NAME = "akiyoshi-yusuke"
+  }
+  args = "\"Hello world, I'm $MY_NAME!\""
 }
