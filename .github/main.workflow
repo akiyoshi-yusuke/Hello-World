@@ -1,12 +1,12 @@
 workflow "New workflow" {
   on = "push"
-  resolves = ["1"]
+  resolves = ["Hello World"]
 }
 
-workflow "New workflow 1" {
-  on = "push"
-}
-
-action "1" {
-  uses = "1"
+action "Hello World" {
+  uses = "./action"
+  env = {
+    MY_NAME = "akiyoshi-yusuke"
+  }
+  args = "\"Hello world, I'm $MY_NAME!\""
 }
